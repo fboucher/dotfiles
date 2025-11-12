@@ -8,6 +8,7 @@ MYHOME=$HOME
 . ../keepassxc/install-keepassxc.sh
 . ../gitkraken/install-gitkraken.sh
 . ../yazi/install-yazi.sh
+. ../hyprmon/install-hyprmon.sh
 
 
 echo "Adding some extra bindings to omarchy..."
