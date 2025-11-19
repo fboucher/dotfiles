@@ -3,12 +3,12 @@
 MYHOME=$HOME
 
 
-. ../brave/install-brave.sh
-. ../rider/install-rider.sh
-. ../keepassxc/install-keepassxc.sh
-. ../gitkraken/install-gitkraken.sh
-. ../yazi/install-yazi.sh
-. ../hyprmon/install-hyprmon.sh
+. ./brave/install-brave.sh
+. ./rider/install-rider.sh
+. ./keepassxc/install-keepassxc.sh
+. ./gitkraken/install-gitkraken.sh
+. ./yazi/install-yazi.sh
+. ./hyprmon/install-hyprmon.sh
 
 
 echo "Adding some extra bindings to omarchy..."
