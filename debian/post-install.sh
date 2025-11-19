@@ -9,8 +9,8 @@ fi
 
 MYHOME=$HOME
 
+. ./snap/install-snap.sh
 . ./brave/install-brave.sh
-# . ./rider/install-rider.sh
 . ./keepassxc/install-keepassxc.sh
 . ./gitkraken/install-gitkraken.sh
 . ./yazi/install-yazi.sh
@@ -27,3 +27,4 @@ fi
 . ./aspire/install-aspire.sh
 . ./zsh/install-zsh.sh
 . ./vscode/install-vscode.sh
+# . ./rider/install-rider.sh
