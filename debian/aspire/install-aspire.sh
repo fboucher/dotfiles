@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "Installing Aspire..."
+
+curl -sSL https://aspire.dev/install.sh | bash

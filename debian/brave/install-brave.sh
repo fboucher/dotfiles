@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo "Installing Brave browser..."
+
+# Add Brave repository
+
+apt -y install curl
+
+curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+curl -fsSLo /etc/apt/sources.list.d/brave-browser-release.sources https://brave-browser-apt-release.s3.brave.com/brave-browser.sources
+
+apt update
+
+apt -y install brave-browser

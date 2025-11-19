@@ -1,0 +1,54 @@
+
+# == MY EXTRAS ==
+
+
+function dnames-fn {
+	for ID in `docker ps | awk '{print $1}' | grep -v 'CONTAINER'`
+	do
+    	docker inspect $ID | grep Name | head -1 | awk '{print $2}' | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
+	done
+}
+
+
+# For YAZI
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+export EDITOR=nano
+
+
+alias dds="systemctl --user start docker-desktop"
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
+alias dps="docker ps |  grep -v Exited | cut -c1-$COLUMNS"
+alias dpsa="docker ps -a"
+alias dnames=dnames-fn
+
+alias lzd="lazydocker"
+alias nv="nvim"
+
+alias ll='eza -l --icons --group-directories-first'
+alias la='eza -l --icons --group-directories-first -A'
+alias l='eza  --icons --group-directories-first'
+
+alias dive="docker run -ti --rm  -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive"
+
+alias hg="history | grep " # +command
+
+alias cl=clear
+
+alias dl='cd ~/Downloads '
+alias doc='cd ~/Documents '
+
+alias dnb='dotnet build '
+
+
+
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+
